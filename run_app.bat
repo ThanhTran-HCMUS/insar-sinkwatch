@@ -19,3 +19,4 @@ echo [2/2] Launching 3D Web GIS Dashboard on http://localhost:8501...
 cd /d "%~dp0"
 python -m streamlit run app.py
 pause
+
