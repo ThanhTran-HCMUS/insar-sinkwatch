@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InSAR-SinkWatch | Pitch Deck NASA Space Apps 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        body {
+            background-color: #050811;
+            color: #f1f5f9;
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .slide-container {
+            width: 90vw;
+            max-width: 1200px;
+            height: 85vh;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(8, 12, 20, 0.98));
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 16px;
+            padding: 40px 60px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(56, 189, 248, 0.15);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .slide {
+            display: none;
+            height: 100%;
+            flex-direction: column;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        .slide.active {
+            display: flex;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        .logo-tag {
+            background: linear-gradient(90deg, #dc2626, #ea580c);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .slide-num {
+            font-size: 14px;
+            color: #94a3b8;
+            font-family: monospace;
+        }
+        h1 {
+            font-size: 42px;
+            font-weight: 800;
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+        h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #38bdf8;
+            margin-bottom: 20px;
+        }
+        h3 {
+            font-size: 20px;
+            color: #f59e0b;
+            margin-bottom: 12px;
+        }
+        p, li {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #cbd5e1;
+        }
+        ul {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+        li {
+            margin-bottom: 12px;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            flex: 1;
+            align-items: center;
+        }
+        .card {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .highlight-danger {
+            color: #f43f5e;
+            font-weight: 700;
+        }
+        .highlight-cyan {
+            color: #38bdf8;
+            font-weight: 700;
+        }
+        .formula-box {
+            background: #0f172a;
+            border: 1px solid #38bdf8;
+            border-radius: 8px;
+            padding: 16px;
+            font-family: monospace;
+            font-size: 22px;
+            text-align: center;
+            color: #38bdf8;
+            margin: 20px 0;
+        }
+        .speaker-notes {
+            background: #1e1e2f;
+            border-left: 4px solid #f59e0b;
+            padding: 12px 18px;
+            border-radius: 6px;
+            margin-top: auto;
+            font-size: 14px;
+            color: #fde68a;
+            display: none;
+        }
+        .speaker-notes.visible {
+            display: block;
+        }
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90vw;
+            max-width: 1200px;
+            margin-top: 15px;
+            color: #64748b;
+            font-size: 13px;
+        }
+        .btn-nav {
+            background: #1e293b;
+            color: #f1f5f9;
+            border: 1px solid #334155;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .btn-nav:hover {
+            background: #38bdf8;
+            color: #0f172a;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slide-container">
+
+    <!-- SLIDE 1 -->
+    <div class="slide active" id="slide-1">
+        <div class="header">
+            <span class="logo-tag">🚀 NASA SPACE APPS 2026</span>
+            <span class="slide-num">SLIDE 01 / 07</span>
+        </div>
+        <div style="text-align: center; margin: auto 0;">
+            <div style="font-size: 18px; text-transform: uppercase; color: #38bdf8; letter-spacing: 2px; margin-bottom: 10px;">ĐỀ TÀI: DANCING WITH THE SARS</div>
+            <h1>InSAR-SinkWatch</h1>
+            <p style="font-size: 24px; color: #cbd5e1; max-width: 850px; margin: 0 auto 30px;">Hệ thống Quan trắc Sụt lún Đô thị & Cảnh báo Sạt lở Độ chính xác Milimet bằng Vệ tinh NASA-ISRO NISAR</p>
+            <div style="background: rgba(30, 41, 59, 0.8); display: inline-block; padding: 12px 28px; border-radius: 30px; border: 1px solid #38bdf8;">
+                <b>Đội thi:</b> <span style="color: #38bdf8;">visionspace_us</span> | Điểm cầu: <b>TP. Hồ Chí Minh, Việt Nam</b>
+            </div>
+        </div>
+        <div class="speaker-notes" id="notes-1">
+            🎙️ <b>Lời thuyết minh (20s):</b> "Kính thưa Ban giám khảo, bề mặt Trái Đất liên tục trải qua một vũ điệu biến dạng. Nhưng tại TP.HCM và châu thổ Mekong, vũ điệu này đang trở thành thảm họa ngầm: mặt đất đang chìm xuống từ 15 đến 45 mm mỗi năm—nhanh gấp 10 lần nước biển dâng. Chúng tôi mang đến giải pháp InSAR-SinkWatch."
+        </div>
+    </div>
+
+    <!-- SLIDE 2 -->
+    <div class="slide" id="slide-2">
+        <div class="header">
+            <span class="logo-tag">⚠️ THÁCH THỨC THỰC TẾ</span>
+            <span class="slide-num">SLIDE 02 / 07</span>
+        </div>
+        <h2>Khủng hoảng Sụt lún Nền đất & Điểm mù Quang học</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3>Vấn đề Trầm trọng tại TP.HCM</h3>
+                <ul>
+                    <li>Tốc độ lún <span class="highlight-danger">15 – 45 mm/năm</span> tại Quận 7, Nhà Bè, Bình Chánh.</li>
+                    <li>Sụt lún diễn ra <span class="highlight-danger">nhanh gấp 5–10 lần</span> tốc độ nước biển dâng (3.5 mm/năm).</li>
+                    <li>Hậu quả: Ngập triều cường nghiêm trọng, nứt gãy công trình hạ tầng, nguy cơ sạt lở sông Tiền/Hậu.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Hạn chế Công nghệ Hiện tại</h3>
+                <ul>
+                    <li><b>Vệ tinh quang học (Sentinel-2, Landsat):</b> Bị "mù hoàn toàn" do mây mù và mưa bão nhiệt đới che phủ hơn 75% thời gian trong năm.</li>
+                    <li><b>Đo đạc thủ công trắc địa:</b> Chi phí cực kỳ đắt đỏ, chỉ đo được vài chục mốc điểm rời rạc, không phản ánh toàn cảnh.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="speaker-notes" id="notes-2">
+            🎙️ <b>Lời thuyết minh (25s):</b> "Tại sao TP.HCM liên tục ngập dù trời không mưa? Vì nền đất đang lún sụt nghiêm trọng do khai thác nước ngầm và tải trọng đô thị trên nền bùn sét yếu. Ảnh quang học hoàn toàn bất lực trước mây mưa nhiệt đới. Chúng ta cần một công cụ nhìn xuyên mây và đo đạc ở cấp độ milimet từ vũ trụ."
+        </div>
+    </div>
+
+    <!-- SLIDE 3 -->
+    <div class="slide" id="slide-3">
+        <div class="header">
+            <span class="logo-tag">🛰️ CÔNG NGHỆ VŨ TRỤ</span>
+            <span class="slide-num">SLIDE 03 / 07</span>
+        </div>
+        <h2>Vũ khí Đột phá: Sóng Radar L-band NASA NISAR</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3>Tại sao Băng sóng L-band lại Chiến thắng?</h3>
+                <ul>
+                    <li><b>Bước sóng dài &lambda; = 24.24 cm (NASA JPL):</b> Xuyên thủng thảm thực vật nhiệt đới và lá cây để phản xạ trực tiếp từ nền đất và móng công trình.</li>
+                    <li>Duy trì độ kết hợp pha cao (&gamma; > 0.6) qua nhiều tháng liên tục, trong khi băng sóng ngắn C-band bị mất tín hiệu hoàn toàn.</li>
+                    <li>Chu kỳ quỹ đạo lặp <b>12 ngày</b> cung cấp nhịp theo dõi liên tục 24/7.</li>
+                </ul>
+            </div>
+            <div class="card" style="text-align: center;">
+                <h3>Nguyên lý Giao thoa Pha InSAR</h3>
+                <div class="formula-box">
+                    &Delta;d = (&lambda; / 4&pi;) &times; &Delta;&phi;<sub>InSAR</sub>
+                </div>
+                <p style="font-size: 16px; color: #94a3b8;">
+                    Chỉ cần sự dịch chuyển pha vi mô vài độ, vệ tinh từ quỹ đạo 747 km đã phát hiện được độ lún <span class="highlight-cyan">1 – 2 milimet</span> trên mặt đất!
+                </p>
+            </div>
+        </div>
+        <div class="speaker-notes" id="notes-3">
+            🎙️ <b>Lời thuyết minh (25s):</b> "Sứ mệnh NASA NISAR mang đến bước ngoặt lớn với sóng L-band 24.24 cm. Khác với C-band dễ bị nhiễu do cây cối rung rinh, L-band xuyên qua thảm phủ để đo trực tiếp độ dịch chuyển của nền móng công trình với độ chính xác từng milimet."
+        </div>
+    </div>
+
+    <!-- SLIDE 4 -->
+    <div class="slide" id="slide-4">
+        <div class="header">
+            <span class="logo-tag">⚙️ KIẾN TRÚC HỆ THỐNG</span>
+            <span class="slide-num">SLIDE 04 / 07</span>
+        </div>
+        <h2>Quy trình Pipeline Xử lý InSAR & Mô hình AI</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3>1. Tiền xử lý Pha Tín hiệu</h3>
+                <ul>
+                    <li>Tạo ảnh giao thoa pha phức (Complex Interferogram): <code>I = M &middot; S*</code></li>
+                    <li>Bộ lọc thích ứng <b>Goldstein InSAR Filter</b> loại bỏ nhiễu đốm mà vẫn bảo toàn sắc nét các đứt gãy và cạnh công trình.</li>
+                    <li>Chuyển đổi pha mở (Unwrapped Phase) sang độ dời thẳng đứng (mm/năm).</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>2. Phân tích AI & Dự báo Địa kỹ thuật</h3>
+                <ul>
+                    <li><b>AI Hotspot Clustering:</b> Tự động khoanh vùng các phễu lún nguy cấp (&lt; -20 mm/năm).</li>
+                    <li><b>Mô hình Cố kết Đất (Soil Consolidation):</b> Dự báo xu hướng lún tích lũy trong 5 – 10 năm tới.</li>
+                    <li><b>Rà soát Rủi ro Công trình:</b> Đối soát vị trí các tuyến Metro, cầu, hầm vượt sông.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="speaker-notes" id="notes-4">
+            🎙️ <b>Lời thuyết minh (25s):</b> "Hệ thống tiếp nhận cặp ảnh radar, áp dụng bộ lọc Goldstein để triệt tiêu nhiễu pha, chuyển đổi pha thành độ dời milimet, và chạy thuật toán AI phân cụm tự động phát hiện các phễu lún nguy hiểm đe dọa trực tiếp các công trình trọng điểm."
+        </div>
+    </div>
+
+    <!-- SLIDE 5 -->
+    <div class="slide" id="slide-5">
+        <div class="header">
+            <span class="logo-tag">💻 DEMO SẢN PHẨM</span>
+            <span class="slide-num">SLIDE 05 / 07</span>
+        </div>
+        <h2>Bảng Điều khiển Web GIS 3D: InSAR-SinkWatch</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3>Tính năng Trực quan Đột phá</h3>
+                <ul>
+                    <li><b>Bản đồ Địa hình Lún 3D (PyDeck Mesh):</b> Mặt đất trực quan lõm sâu xuống thành phễu 3D theo tốc độ lún.</li>
+                    <li><b>Vòng Giao thoa Pha Đa sắc:</b> Hiển thị trực quan dải màu cầu vồng InSAR chuẩn NASA.</li>
+                    <li><b>Thanh trượt Dự báo Tương lai:</b> Xem trước diện mạo sụt lún của thành phố đến năm 2036.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Khả năng Tương thích GIS Mở</h3>
+                <ul>
+                    <li>Bảng cảnh báo rủi ro tức thời cho: <b>Ga Metro Bến Thành, Ba Son, Cầu Phú Mỹ, Hầm Thủ Thiêm</b>.</li>
+                    <li>Xuất dữ liệu 1-click chuẩn <b>GeoJSON</b> để các chuyên gia địa lý mở trực tiếp trên QGIS, ArcGIS.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="speaker-notes" id="notes-5">
+            🎙️ <b>Lời thuyết minh (30s):</b> "Đây là Web GIS 3D của chúng tôi. Các nhà quản lý đô thị có thể thấy ngay mặt đất Quận 7 và Bình Tân lún sâu 38 mm mỗi năm dưới dạng cột 3D. Ứng dụng tự động cảnh báo mức độ rủi ro lún vi sai cho tuyến Metro số 1 và cho phép tải file GeoJSON về QGIS chỉ với một nút bấm."
+        </div>
+    </div>
+
+    <!-- SLIDE 6 -->
+    <div class="slide" id="slide-6">
+        <div class="header">
+            <span class="logo-tag">🔬 LUẬN GIẢI KHOA HỌC</span>
+            <span class="slide-num">SLIDE 06 / 07</span>
+        </div>
+        <h2>Kiểm chứng Địa chất & Khuyến nghị Chính sách</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3>Đóng góp của Chuyên ngành Địa lý</h3>
+                <ul>
+                    <li>Phễu lún radar trùng khớp hoàn toàn với <b>tầng bùn sét Holocen dày 30m</b> chịu tải yếu ở phía Nam thành phố.</li>
+                    <li>Nguyên lý Terzaghi: Hút cạn nước ngầm Pleistocen làm giảm áp lực lỗ rỗng, gây sụt lún không thể phục hồi.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Kiến nghị cho Chính quyền Địa phương</h3>
+                <ul>
+                    <li>Cấm triệt để khai thác nước ngầm tầng sâu tại các điểm nóng Quận 7, Bình Tân, Nhà Bè.</li>
+                    <li>Lắp đặt mốc phản xạ radar góc nhọn (Corner Reflectors) dọc tuyến Metro 1 & 2 để giám sát an toàn đường ray hàng tuần.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="speaker-notes" id="notes-6">
+            🎙️ <b>Lời thuyết minh (25s):</b> "Nghiên cứu địa lý của chúng tôi chứng minh rằng vùng lún InSAR trùng khớp 100% với tầng bùn sét Holocen dày 30m và các cụm giếng khoan công nghiệp. InSAR-SinkWatch cung cấp bằng chứng định lượng chính xác để chính quyền siết chặt cấp phép nước ngầm và bảo vệ mạng sống hàng trăm ngàn dân cư."
+        </div>
+    </div>
+
+    <!-- SLIDE 7 -->
+    <div class="slide" id="slide-7">
+        <div class="header">
+            <span class="logo-tag">👥 ĐỘI THI & TẦM NHÌN</span>
+            <span class="slide-num">SLIDE 07 / 07</span>
+        </div>
+        <div style="text-align: center; margin: auto 0;">
+            <h2>Đội thi visionspace_us & Tầm nhìn Toàn cầu</h2>
+            <p style="font-size: 20px; color: #94a3b8; margin-bottom: 30px;">Sự kết hợp hoàn hảo giữa <b>Trí tuệ Nhân tạo</b> và <b>Khoa học Địa lý Không gian</b></p>
+            <div class="grid-2" style="max-width: 900px; margin: 0 auto 30px;">
+                <div class="card">
+                    <h3 style="color: #38bdf8;">Kỹ sư AI & Phần mềm</h3>
+                    <p style="font-size: 15px;">Thuật toán InSAR, xử lý tín hiệu số, AI phát hiện dị thường, Web GIS 3D.</p>
+                </div>
+                <div class="card">
+                    <h3 style="color: #38bdf8;">Chuyên gia Địa lý & GIS</h3>
+                    <p style="font-size: 15px;">Địa mạo, thạch học trầm tích Holocen, thủy văn, phân tích không gian QGIS.</p>
+                </div>
+            </div>
+            <div style="color: #38bdf8; font-weight: 700; font-size: 18px;">
+                Mã nguồn mở 100% — Sẵn sàng mở rộng cho mọi vùng châu thổ đang chìm trên thế giới!
+            </div>
+        </div>
+        <div class="speaker-notes" id="notes-7">
+            🎙️ <b>Lời thuyết minh (20s):</b> "Chúng tôi là đội visionspace_us—kết hợp thế mạnh AI và khoa học địa lý. InSAR-SinkWatch minh chứng cho sức mạnh của dữ liệu mở NASA trong việc bảo vệ các thành phố ven biển tương lai. Xin chân thành cảm ơn Ban giám khảo!"
+        </div>
+    </div>
+
+</div>
+
+<!-- BOTTOM BAR CONTROLS -->
+<div class="controls">
+    <div>
+        <button class="btn-nav" onclick="prevSlide()">❮ Trang trước (Left)</button>
+        <button class="btn-nav" onclick="nextSlide()">Trang sau (Right) ❯</button>
+        <button class="btn-nav" onclick="toggleNotes()">🎙️ Bật/Tắt Lời thuyết minh (N)</button>
+    </div>
+    <div>Nhấn <b>F11</b> để xem Toàn màn hình | Phím <b>Mũi tên / Space</b> để chuyển trang</div>
+</div>
+
+<script>
+    let currentSlide = 1;
+    const totalSlides = 7;
+
+    function showSlide(n) {
+        document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+        if (n > totalSlides) currentSlide = 1;
+        if (n < 1) currentSlide = totalSlides;
+        document.getElementById(`slide-${currentSlide}`).classList.add('active');
+    }
+
+    function nextSlide() {
+        currentSlide++;
+        showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+        currentSlide--;
+        showSlide(currentSlide);
+    }
+
+    function toggleNotes() {
+        document.querySelectorAll('.speaker-notes').forEach(n => n.classList.toggle('visible'));
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === ' ') {
+            nextSlide();
+        } else if (e.key === 'ArrowLeft') {
+            prevSlide();
+        } else if (e.key === 'n' || e.key === 'N') {
+            toggleNotes();
+        }
+    });
+</script>
+
+</body>
+</html>
