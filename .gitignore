@@ -14,11 +14,21 @@ env/
 venv/
 ENV/
 
-# Streamlit local settings
-.streamlit/
+# Streamlit local settings (keep config.toml, ignore secrets)
+.streamlit/secrets.toml
 
 # Temporary data / caches
 .cache/
 .DS_Store
+Thumbs.db
 *.tmp
+.vscode/
+.idea/
+
+# Internal Competition Pitch & Presentation Prep (Keep locally, do not push to GitHub)
+presentation/
+docs/
+create_*.py
+build_*.py
+render_*.py
 

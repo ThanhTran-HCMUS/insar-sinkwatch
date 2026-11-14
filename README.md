@@ -1,7 +1,8 @@
 # 🛰️ InSAR-SinkWatch: NASA NISAR Millimeter-Precision Urban Subsidence & Landslide Observatory
 
 > **Official Project for NASA International Space Apps Challenge 2026**  
-> **Team Name:** `visionspace_us` (Local Event: Ho Chi Minh City, Vietnam)  
+> **Team Name:** `VisionSpace_UsxSgu` (Local Event: Ho Chi Minh City, Vietnam)  
+> **Members:** Trần Minh Thành (`@minhthanh_tran`) & Phạm Thị Kim Ngân (`@ebnata`)  
 > **Challenge:** *Dancing with the SARs (Tracking Earth's Surface Dynamics via Radar Remote Sensing)*  
 > **Target Mission:** **NASA-ISRO Synthetic Aperture Radar (NISAR)**
 
@@ -84,11 +85,21 @@ The application will launch automatically at `http://localhost:8501`.
 
 ---
 
-## 🌐 Alignment with NASA Open Science & Datasets
+## 🌐 Alignment with NASA Open Science & Space Agency Datasets
 
-1. **NISAR (NASA-ISRO Synthetic Aperture Radar):** Simulated and calibrated against NISAR L-band repeat-pass interferometry specifications (12-day repeat orbit, 24 cm wavelength).
-2. **Alaska Satellite Facility (ASF DAAC):** Leveraging open SAR data standards (SLC, InSAR unwrapped phase rasters).
-3. **NASA Earthdata:** Integrating open digital elevation models (SRTM / Copernicus DEM) for topographic phase removal.
+Our project directly integrates and cites the official resources provided in the NASA Space Apps Challenge:
+
+### NASA Data & Resources
+1. **ASF Data Search Vertex (Alaska Satellite Facility):** [https://search.asf.alaska.edu/](https://search.asf.alaska.edu/) — Source for SAR SLC acquisitions and baseline queries via ASF DAAC REST API (`src/pipeline/asf_downloader.py`).
+2. **NASA Earthdata Search:** [https://search.earthdata.nasa.gov/](https://search.earthdata.nasa.gov/) — Global digital elevation models (SRTM DEM 30m) for topographic phase removal.
+3. **NISAR Data User Guide:** [https://nisar-docs.asf.alaska.edu/](https://nisar-docs.asf.alaska.edu/) — Technical specifications for NISAR L-band repeat-pass interferometry ($\lambda = 24.24\text{ cm}$, 12-day repeat orbit).
+4. **NISAR Applications White Papers:** [https://nisar.jpl.nasa.gov/applications/overview/](https://nisar.jpl.nasa.gov/applications/overview/) — Frameworks for urban land subsidence and geotechnical hazard mapping.
+5. **UAVSAR Postcards:** [https://uavsar.jpl.nasa.gov/education/postcards/](https://uavsar.jpl.nasa.gov/education/postcards/) — NASA airborne L-band polarimetric test data.
+
+### Space Agency Partner Resources
+6. **CSA Synthetic Aperture Radar python Tutorial:** [https://github.com/asc-csa/Synthetic_Aperture_Radar_Tutorial](https://github.com/asc-csa/Synthetic_Aperture_Radar_Tutorial) — Open Python & QGIS SAR processing workflows.
+7. **CONAE SAOCOM Catalogue:** [https://catalog.saocom.conae.gov.ar/catalog/](https://catalog.saocom.conae.gov.ar/catalog/) — L-band SAR test products and constellation data standards.
+8. **CSA Radarsat Constellation Mission (RCM) - Data:** [https://www.asc-csa.gc.ca/eng/satellites/radarsat/](https://www.asc-csa.gc.ca/eng/satellites/radarsat/) — Disaster monitoring SAR specifications.
 
 ---
 

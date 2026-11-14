@@ -34,3 +34,4 @@
 1. **Kéo chuột xoay góc nhìn 3D (Pitch 45°):** Cho giám khảo thấy rõ các cột địa hình sụt lún màu đỏ hạ sâu xuống ở Quận 7 và Bình Tân.
 2. **Bật/Tắt Bộ lọc Goldstein:** Cho thấy vân giao thoa pha (Fringes) từ dạng nhiễu hạt trở nên sắc nét rõ ràng.
 3. **Bấm nút Tải GeoJSON:** Chứng minh ứng dụng tương thích hoàn hảo với phần mềm QGIS/ArcGIS của giới khoa học không gian.
+

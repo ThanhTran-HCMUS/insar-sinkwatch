@@ -40,10 +40,19 @@ We addressed this challenge directly by:
 
 ---
 
-### 4. NASA Data & Open Science Resources Used
-* **NASA-ISRO SAR (NISAR) Mission Data Specifications:** L-band repeat-pass interferometry standards (24.24 cm wavelength, 12-day orbital repeat cycle, high spatial resolution).
-* **Alaska Satellite Facility (ASF DAAC):** Open SAR processing methodologies, Single Look Complex (SLC) interferogram formation guidelines, and OpenSARLab recipes.
-* **NASA Earthdata & SRTM DEM:** Digital Elevation Model (DEM) parameters used for synthetic phase reference simulation and topographic phase removal.
+### 4. NASA Data & Space Agency Resources Used
+
+#### A. NASA Data & Resources:
+* **ASF Data Search Vertex (Alaska Satellite Facility):** [https://search.asf.alaska.edu/](https://search.asf.alaska.edu/) — Open SAR repository for SLC radar pairs, InSAR metadata, and search API endpoints.
+* **NASA Earthdata Search:** [https://search.earthdata.nasa.gov/](https://search.earthdata.nasa.gov/) — Centralized Earth science data portal for global digital elevation models (SRTM DEM) utilized in topographic phase removal.
+* **NISAR Data User Guide:** [https://nisar-docs.asf.alaska.edu/](https://nisar-docs.asf.alaska.edu/) — Official mission specifications for NISAR L-band repeat-pass interferometry (24.24 cm wavelength, 12-day repeat cadence).
+* **NISAR Applications White Papers:** [https://nisar.jpl.nasa.gov/applications/overview/](https://nisar.jpl.nasa.gov/applications/overview/) — Science benchmarks for land subsidence hazard detection and municipal infrastructure risk management.
+* **UAVSAR Postcards:** [https://uavsar.jpl.nasa.gov/education/postcards/](https://uavsar.jpl.nasa.gov/education/postcards/) — NASA airborne polarimetric L-band prototype imagery for cross-validation.
+
+#### B. Space Agency Partner Resources:
+* **CSA Synthetic Aperture Radar python Tutorial:** [https://github.com/asc-csa/Synthetic_Aperture_Radar_Tutorial](https://github.com/asc-csa/Synthetic_Aperture_Radar_Tutorial) — Open-source Python & QGIS workflows for SAR processing and visualization.
+* **CONAE SAOCOM Catalogue:** [https://catalog.saocom.conae.gov.ar/catalog/](https://catalog.saocom.conae.gov.ar/catalog/) — Polarimetric L-band SAR satellite constellation catalogue and test products.
+* **CSA Radarsat Constellation Mission (RCM) - Data:** [https://www.asc-csa.gc.ca/eng/satellites/radarsat/](https://www.asc-csa.gc.ca/eng/satellites/radarsat/) — Disaster management and multi-temporal orbital radar monitoring standards.
 
 ---
 

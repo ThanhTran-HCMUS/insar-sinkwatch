@@ -71,9 +71,10 @@ def run_tests():
     assert "risk_level" in assessed[0]
     print("  ✓ AI Hotspot Anomaly Clustering & Forecasting: PASSED")
     
-    # 3. Test Geotechnical Analytics & GeoJSON
-    print("\n[3/5] Testing Geotechnical Analytics & Vector GeoJSON...")
-    from src.analytics.insar_metrics import calculate_geotechnical_impact, export_insar_geojson
+    # 3. Test Geotechnical Analytics & GeoJSON/KML
+    print("\n[3/5] Testing Geotechnical Analytics & Vector GeoJSON/KML...")
+    from src.analytics.insar_metrics import calculate_geotechnical_impact, export_insar_geojson, export_insar_kml
+    import xml.etree.ElementTree as ET
     
     impact = calculate_geotechnical_impact(hotspots, mock_vel, pixel_spacing_meters=20.0)
     assert "critical_subsidence_area_km2" in impact
@@ -82,7 +83,12 @@ def run_tests():
     geojson_str = export_insar_geojson(mock_vel, bounds, assessed, sample_step=4)
     assert "FeatureCollection" in geojson_str
     assert "NISAR_Urban_Subsidence_InSAR" in geojson_str
-    print("  ✓ Geotechnical Volume Metrics & GeoJSON Generation: PASSED")
+    
+    # Test native KML export and strict XML validity
+    kml_str = export_insar_kml(mock_vel, bounds, assessed, sample_step=4)
+    kml_root = ET.fromstring(kml_str)
+    assert kml_root.tag.endswith("kml")
+    print("  ✓ Geotechnical Volume Metrics & GeoJSON/KML Generation: PASSED")
     
     # 4. Test Data Simulation Module
     print("\n[4/5] Testing Multi-Scenario Data Simulation...")
