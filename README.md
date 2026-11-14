@@ -73,13 +73,17 @@ Because optical satellites (Landsat, Sentinel-2) are blinded by the perennial tr
 
 ### Running the Application Locally
 ```bash
-# Clone the repository
-git clone https://github.com/visionspace-us/InSAR-SinkWatch.git
-cd InSAR-SinkWatch
+# 1. Clone the repository
+git clone https://github.com/ThanhTran-HCMUS/insar-sinkwatch.git
+cd insar-sinkwatch
 
-# Launch the Streamlit Web GIS Dashboard
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Launch the Streamlit Web GIS Dashboard
 streamlit run app.py
 ```
+*(On Windows, you can also simply double-click `run_app.bat` to launch instantly).*
 
 The application will launch automatically at `http://localhost:8501`.
 
@@ -103,7 +107,7 @@ Our project directly integrates and cites the official resources provided in the
 
 ---
 
-## 👥 The Team: `visionspace_us`
-* **Lead AI & Software Engineer:** Architecture, InSAR phase-displacement algorithms, AI hotspot clustering, and 3D Web GIS engine.
-* **Lead Geographer & Earth Scientist:** Geomorphological analysis, Holocene sediment lithology, groundwater depletion modeling, and policy translation.
+## 👥 The Team: `VisionSpace_UsxSgu`
+* **Trần Minh Thành (`@minhthanh_tran`)** — Team Owner & Lead AI / InSAR Pipeline Engineer: System architecture, InSAR phase-displacement algorithms, AI hotspot clustering, and 3D Web GIS engine.
+* **Phạm Thị Kim Ngân (`@ebnata`)** — Geospatial Earth Scientist & Environmental Data Analyst: Geomorphological analysis, Holocene sediment lithology, groundwater depletion modeling, and policy translation.
 
