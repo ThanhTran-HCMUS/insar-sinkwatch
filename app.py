@@ -1,7 +1,7 @@
 """
 InSAR-SinkWatch: Urban Ground Subsidence & Geotechnical Hazard Monitoring Platform
 NASA International Space Apps Challenge 2026
-Challenge: Dancing with the SARs | Team: visionspace_us (Ho Chi Minh City, Vietnam)
+Challenge: Dancing with the SARs | Team: VisionSpace_UsxSgu (Ho Chi Minh City, Vietnam)
 """
 
 import os
@@ -1215,7 +1215,7 @@ with tab_poi:
 # =============================================================================
 with tab_geo:
     st.markdown("##### Báo cáo Tổng hợp Khoa học Địa chất, Địa mạo & Cơ chế Thủy văn")
-    st.caption("Biên soạn bởi nhóm nghiên cứu Địa lý & Khoa học Môi trường — visionspace_us")
+    st.caption("Biên soạn bởi nhóm nghiên cứu Địa lý & Khoa học Môi trường — VisionSpace_UsxSgu")
     
     g_col1, g_col2 = st.columns(2)
     
@@ -1312,6 +1312,6 @@ st.markdown("<hr style='border:none; border-top:1px solid #1f2937; margin: 24px 
 st.markdown("""
 <div style="display: flex; justify-content: space-between; align-items: center; font-size: 11.5px; color: #64748b; flex-wrap: wrap; gap: 8px;">
     <div><strong>InSAR-SinkWatch</strong> • Nền tảng Quan trắc Sụt lún Nền đất & Biến dạng Đô thị</div>
-    <div>NASA International Space Apps Challenge 2026 • Đội thi: <strong>visionspace_us</strong> (TP. Hồ Chí Minh)</div>
+    <div>NASA International Space Apps Challenge 2026 • Đội thi: <strong>VisionSpace_UsxSgu</strong> (TP. Hồ Chí Minh)</div>
 </div>
 """, unsafe_allow_html=True)

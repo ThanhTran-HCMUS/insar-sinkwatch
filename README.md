@@ -1,4 +1,4 @@
-# 🛰️ InSAR-SinkWatch: NASA NISAR Millimeter-Precision Urban Subsidence & Landslide Observatory
+# 🛰️ InSAR-SinkWatch: NASA NISAR Millimeter-Precision Urban Subsidence Observatory
 
 > **Official Project for NASA International Space Apps Challenge 2026**  
 > **Team Name:** `VisionSpace_UsxSgu` (Local Event: Ho Chi Minh City, Vietnam)  
@@ -10,11 +10,11 @@
 
 ## 🌍 Executive Summary
 
-Earth's surface is engaged in an intricate, continuous dance of deformation. In major coastal mega-deltas like **Ho Chi Minh City** and the **Mekong River basin (Vietnam)**, the ground is subsiding at an alarming velocity of **$15\text{ to }45\text{ mm/year}$**—sinking **5 to 10 times faster than climate-induced sea-level rise**. Meanwhile, outer concave riverbanks along the Mekong River suffer abrupt collapse, destroying homes and vital infrastructure.
+Earth's surface is engaged in an intricate, continuous dance of deformation. Across coastal mega-cities like **Ho Chi Minh City (Vietnam)**, this dance has become an acute silent crisis: the ground is subsiding at an alarming velocity of **$15\text{ to }45\text{ mm/year}$** across low-lying districts (District 7, Nhà Bè, Bình Tân)—sinking **5 to 10 times faster than climate-induced sea-level rise**. This rapid compaction accelerates sunny-day tidal inundation and threatens structural integrity along critical transit corridors.
 
-Because optical satellites (Landsat, Sentinel-2) are blinded by the perennial tropical cloud cover, and traditional ground leveling stations are sparse and costly, these critical geohazards often remain invisible until catastrophic failure occurs.
+Because optical satellites (Landsat, Sentinel-2) are blinded by the perennial tropical cloud cover, and traditional ground leveling stations are sparse and costly, these critical geohazards often remain invisible until catastrophic structural failure occurs.
 
-**`InSAR-SinkWatch`** is an end-to-end AI-powered geospatial observatory that harnesses the revolutionary **L-band repeat-pass Interferometric Synthetic Aperture Radar (InSAR)** from the **NASA-ISRO NISAR** mission. By processing the phase difference of radar pulses ($\lambda = 24.24\text{ cm}$), the system reconstructs vertical millimeter-scale surface displacement fields, automatically detects critical subsidence bowls using AI spatial clustering, screens civil infrastructure vulnerability (Metro Line 1 & 2, bridges, ports), and provides an interactive 3D Web GIS dashboard for disaster mitigation and urban adaptation.
+**`InSAR-SinkWatch`** is an end-to-end AI-powered geospatial observatory that harnesses the revolutionary **L-band repeat-pass Interferometric Synthetic Aperture Radar (InSAR)** from the **NASA-ISRO NISAR** mission. By processing the phase difference of radar pulses ($\lambda = 24.24\text{ cm}$), the system reconstructs vertical millimeter-scale surface displacement fields, automatically detects critical subsidence bowls using AI spatial clustering, screens civil infrastructure vulnerability (Metro Line 1 & 2, bridges, ports), and provides an interactive 3D Web GIS dashboard for municipal disaster mitigation and urban adaptation.
 
 ---
 

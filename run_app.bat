@@ -3,7 +3,7 @@ title InSAR-SinkWatch Launcher - NASA Space Apps 2026
 color 0B
 echo ============================================================
 echo   InSAR-SinkWatch: NASA NISAR Urban Subsidence Observatory
-echo   Team: visionspace_us ^| Local Event: Ho Chi Minh City
+echo   Team: VisionSpace_UsxSgu ^| Local Event: Ho Chi Minh City
 echo ============================================================
 echo.
 echo [1/2] Checking Python environment...

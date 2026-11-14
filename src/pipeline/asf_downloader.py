@@ -43,7 +43,7 @@ def query_nasa_asf_sar_granules(
     
     req = urllib.request.Request(
         api_url,
-        headers={"User-Agent": "NASA-SpaceApps-visionspace_us"}
+        headers={"User-Agent": "NASA-SpaceApps-VisionSpace_UsxSgu"}
     )
     
     try:
